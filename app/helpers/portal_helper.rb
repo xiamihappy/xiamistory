@@ -49,7 +49,8 @@ module PortalHelper
   
   def portal_user
     #TODO how to cache @_user?
-    @_user = (@user.nil? ? User.find_by_domain('webmaster') : @user) if @_user.nil?
+    @_user = nil
+    #@_user = (@user.nil? ? User.find_by_domain('webmaster') : @user) if @_user.nil?
   end
 
 end

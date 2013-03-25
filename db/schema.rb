@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.string   "description"
     t.integer  "user_id"
     t.integer  "photo_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "albums", ["user_id"], :name => "index_albums_on_user_id"
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
   create_table "assortments", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "assortments", ["user_id"], :name => "index_assortments_on_user_id"
@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.text     "body"
     t.integer  "blog_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "likecount",  :default => 0
     t.text     "likeusers"
   end
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.text     "content"
     t.integer  "category_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "views_count",     :default => 0
     t.integer  "comments_count",  :default => 0
     t.integer  "recommend_count", :default => 0
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
   create_table "blogs_columns", :id => false, :force => true do |t|
     t.integer  "column_id"
     t.integer  "blog_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "blogs_columns", ["blog_id"], :name => "index_blogs_columns_on_blog_id"
@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
 
   create_table "boards", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "books_books", :force => true do |t|
@@ -105,8 +105,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "chats", :force => true do |t|
@@ -122,16 +122,16 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
 
   create_table "columns", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "user_id"
   end
 
   create_table "columns_notes", :id => false, :force => true do |t|
     t.integer  "column_id"
     t.integer  "note_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "columns_notes", ["column_id"], :name => "index_columns_notes_on_column_id"
@@ -140,8 +140,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
   create_table "customizes", :force => true do |t|
     t.string   "bgimage"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "customizes", ["user_id"], :name => "index_customizes_on_user_id"
@@ -149,15 +149,15 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
   create_table "enjoys", :force => true do |t|
     t.string   "name"
     t.integer  "stype"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "fboards", :force => true do |t|
     t.integer  "user_id"
     t.integer  "board_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "fboards", ["board_id"], :name => "index_fboards_on_board_id"
@@ -169,8 +169,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.integer  "follower_id",                        :null => false
     t.string   "follower_type",                      :null => false
     t.boolean  "blocked",         :default => false, :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   add_index "follows", ["followable_id", "followable_type"], :name => "fk_followables"
@@ -229,23 +229,23 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
 
   create_table "hobbies", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "idols", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "letters", :force => true do |t|
     t.text     "body"
     t.integer  "user_id"
     t.integer  "recipient_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   add_index "letters", ["recipient_id"], :name => "index_letters_on_recipient_id"
@@ -255,8 +255,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.text     "body"
     t.integer  "memoir_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "likecount",  :default => 0
     t.text     "likeusers"
   end
@@ -268,8 +268,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "views_count",     :default => 0
     t.integer  "comments_count",  :default => 0
     t.integer  "recommend_count", :default => 0
@@ -280,15 +280,15 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
   create_table "menus", :force => true do |t|
     t.string   "name"
     t.string   "code"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "menus_roles", :id => false, :force => true do |t|
     t.integer  "role_id"
     t.integer  "menu_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "messages", :force => true do |t|
@@ -305,8 +305,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
   create_table "notecates", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "notecates", ["user_id"], :name => "index_notecates_on_user_id"
@@ -315,8 +315,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.text     "body"
     t.integer  "note_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "likecount",  :default => 0
     t.text     "likeusers"
   end
@@ -328,8 +328,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "notecate_id"
     t.integer  "views_count",     :default => 0
     t.integer  "comments_count",  :default => 0
@@ -354,8 +354,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.text     "body"
     t.integer  "photo_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "likecount",  :default => 0
     t.text     "likeusers"
   end
@@ -367,8 +367,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.string   "description"
     t.string   "avatar"
     t.integer  "album_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "views_count",     :default => 0
     t.integer  "comments_count",  :default => 0
     t.integer  "recommend_count", :default => 0
@@ -381,8 +381,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.integer  "likecount",  :default => 0
     t.integer  "post_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.text     "likeusers"
   end
 
@@ -395,16 +395,16 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.integer  "board_id"
     t.integer  "user_id"
     t.datetime "replied_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "rblogs", :force => true do |t|
     t.string   "body"
     t.integer  "user_id"
     t.integer  "blog_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "rblogs", ["blog_id"], :name => "index_rblogs_on_blog_id"
@@ -413,8 +413,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
   create_table "renjoys", :force => true do |t|
     t.integer  "user_id"
     t.integer  "enjoy_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "renjoys", ["enjoy_id"], :name => "index_renjoys_on_enjoy_id"
@@ -423,8 +423,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
   create_table "rhobbies", :force => true do |t|
     t.integer  "user_id"
     t.integer  "hobby_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "rhobbies", ["hobby_id"], :name => "index_rhobbies_on_hobby_id"
@@ -433,8 +433,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
   create_table "ridols", :force => true do |t|
     t.integer  "user_id"
     t.integer  "idol_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "ridols", ["idol_id"], :name => "index_ridols_on_idol_id"
@@ -444,8 +444,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.text     "body"
     t.integer  "user_id"
     t.integer  "memoir_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "rmemoirs", ["memoir_id"], :name => "index_rmemoirs_on_memoir_id"
@@ -455,8 +455,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.string   "body"
     t.integer  "user_id"
     t.integer  "note_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "rnotes", ["note_id"], :name => "index_rnotes_on_note_id"
@@ -464,15 +464,15 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "roles_users", :id => false, :force => true do |t|
     t.integer  "user_id"
     t.integer  "role_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
@@ -481,8 +481,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.text     "body"
     t.integer  "user_id"
     t.integer  "photo_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "rphotos", ["photo_id"], :name => "index_rphotos_on_photo_id"
@@ -498,8 +498,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
@@ -517,8 +517,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.string   "siteid"
     t.string   "sitename"
     t.integer  "blog_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "tracemaps", ["blog_id"], :name => "index_tracemaps_on_blog_id"
@@ -538,8 +538,8 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.string   "jobs"
     t.string   "company"
     t.string   "school"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                                :null => false
+    t.datetime "updated_at",                                                :null => false
     t.string   "snslinks"
     t.text     "signature"
     t.string   "weiboid"
@@ -562,7 +562,7 @@ ActiveRecord::Schema.define(:version => 20130227005407) do
     t.integer  "comments_count",         :default => 0
     t.string   "contact"
     t.integer  "clicks_count",           :default => 0
-    t.datetime "view_messages_at",       :default => '2012-10-28 09:43:16'
+    t.datetime "view_messages_at",       :default => '2013-03-25 15:04:45'
     t.integer  "unread_messages_count",  :default => 0
   end
 

@@ -7,18 +7,18 @@ require File.expand_path('../application', __FILE__)
 # Initialize the rails application
 Cms::Application.initialize!
 
-DOMAINS = [Settings.domain]
+#DOMAINS = [Settings.domain]
+DOMAINS = ["localhost"]
+# if Settings[:qq]
+#   APPID = Settings.qq.appid.to_s
+#   APPKEY = Settings.qq.appkey
+# end
 
-if Settings[:qq]
-  APPID = Settings.qq.appid.to_s
-  APPKEY = Settings.qq.appkey
-end
+# #QQ and weibo connect
+# REDURL = "&redirect_uri=#{Settings.domain}/qq_callback"
+# WeiboOAuth2::Config.redirect_uri = "http://#{Settings.domain}/weibo_callback"
 
-#QQ and weibo connect
-REDURL = "&redirect_uri=#{Settings.domain}/qq_callback"
-WeiboOAuth2::Config.redirect_uri = "http://#{Settings.domain}/weibo_callback"
-
-YUN_IMAGES = Settings[:upyun] ? "http://#{Settings.upyun.bucket_domain}/images/" : "/images/"
+# YUN_IMAGES = Settings[:upyun] ? "http://#{Settings.upyun.bucket_domain}/images/" : "/images/"
 
 S_SIZE=126
 D_SIZE=200
