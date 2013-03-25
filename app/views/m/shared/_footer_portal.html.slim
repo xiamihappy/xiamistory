@@ -1,0 +1,3 @@
+.bom-nav
+  - unless session[:id].nil?
+    = link_to t('logout'), m(logout_path)
