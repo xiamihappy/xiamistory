@@ -1,3 +1,5 @@
+Learn by copy
+
 DEMO: [我的故事网站](http://mystory.cc/)
 
 如果要看详尽的内容，请[阅读WIKI](https://github.com/gazeldx/mystory/wiki/)。
